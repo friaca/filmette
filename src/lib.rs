@@ -46,7 +46,7 @@ pub fn run(input_path: &PathBuf, output_path: &PathBuf) -> io::Result<()> {
 
   for entry in frames_paths {
     let bytes = fs_utils::read_bytes(&entry);
-    let Ok(palette) = color_thief::get_palette(&bytes, ColorFormat::Rgb, 1, 2) else { panic!("Couldn't retrieve pallete") };
+    let Ok(palette) = color_thief::get_palette(&bytes, ColorFormat::Rgb, 10, 2) else { panic!("Couldn't retrieve pallete") };
     colors.push(palette[0]);
   }
   
