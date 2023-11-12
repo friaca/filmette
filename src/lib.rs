@@ -59,8 +59,9 @@ pub fn run(input_path: &PathBuf, output_path: &PathBuf) -> io::Result<()> {
   let mut image = RgbImage::new(width, HEIGHT);
   
   for x in 0..width {
+    let color = colors[x as usize];
+    
     for y in 0..HEIGHT {
-      let color = colors[x as usize];
       let rgb = Rgb::from([color.r, color.g, color.b]);
       image.put_pixel(x, y, rgb);
     }
